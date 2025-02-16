@@ -18,71 +18,71 @@ msgstr ""
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__changeset_change_ids
 msgid "Changeset Changes"
-msgstr "Changeset Değişiklikleri"
+msgstr "チェンジセットの変更"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__changeset_ids
 msgid "Changesets"
-msgstr "Changesets"
+msgstr "チェンジセット"
 
 #. module: auth_user_case_insensitive
 #. odoo-python
 #: code:addons/auth_user_case_insensitive/hooks.py:0
 #, python-format
 msgid "Conflicting user logins exist for `%s`"
-msgstr "´%s` için çakışan kullanıcı girişleri mevcut"
+msgstr "s` に競合するユーザー・ログインが存在します。"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_changesets
 msgid "Count Changesets"
-msgstr "Sayım Değişiklik Setleri"
+msgstr "チェンジセット数"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_pending_changeset_changes
 msgid "Count Pending Changeset Changes"
-msgstr "Bekleyen Değişiklik Seti Değişikliklerini Say"
+msgstr "保留中のチェンジセットの変更をカウント"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_pending_changesets
 msgid "Count Pending Changesets"
-msgstr "Bekleyen Değişiklik Setlerini Say"
+msgstr "保留中のチェンジセットをカウント"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__login
 msgid "Login"
-msgstr "Oturum aç"
+msgstr "ログイン"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__smart_search
 msgid "Smart Search"
-msgstr "Akıllı Arama"
+msgstr "スマート検索"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_pending_changeset_changes
 msgid "The number of pending changes of this record"
-msgstr "Bu kaydın bekleyen değişiklik sayısı"
+msgstr "このレコードの保留中の変更数"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_pending_changesets
 msgid "The number of pending changesets of this record"
-msgstr "Bu kaydın bekleyen değişiklik setlerinin sayısı"
+msgstr "このレコードの保留中のチェンジセットの数"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_changesets
 msgid "The overall number of changesets of this record"
-msgstr "Bu kaydın toplam değişiklik seti sayısı"
+msgstr "このレコードの全体のチェンジセット数"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__login
 msgid "Used to log into the system. Case insensitive."
-msgstr "Sisteme giriş için kullanılmış"
+msgstr "システムにログインするために使用します。"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model,name:auth_user_case_insensitive.model_res_users
 msgid "User"
-msgstr "Kullanıcı"
+msgstr "ユーザ"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__user_can_see_changeset
 msgid "User Can See Changeset"
-msgstr "Kullanıcı Değişiklikleri Görebilir"
+msgstr "ユーザーは変更セットを見ることができます"

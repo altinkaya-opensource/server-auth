@@ -1,23 +1,29 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * auth_user_case_insensitive
+# 	* auth_user_case_insensitive
 #
-# Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-17 21:08+0000\n"
-"PO-Revision-Date: 2024-01-03 14:33+0000\n"
-"Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
-"Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
-"Language: it\n"
+"POT-Creation-Date: 2025-02-14 19:09+0000\n"
+"PO-Revision-Date: 2025-02-14 19:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"Plural-Forms: \n"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__changeset_change_ids
+msgid "Changeset Changes"
+msgstr "Modifiche dell'insieme di modifiche"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__changeset_ids
+msgid "Changesets"
+msgstr "Insiemi di modifiche"
 
 #. module: auth_user_case_insensitive
 #. odoo-python
@@ -27,19 +33,57 @@ msgid "Conflicting user logins exist for `%s`"
 msgstr "Esiste un conflitto di accessi per l'utente '%s'"
 
 #. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_changesets
+msgid "Count Changesets"
+msgstr "Conta insiemi di modifiche"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_pending_changeset_changes
+msgid "Count Pending Changeset Changes"
+msgstr "Conteggio modifiche dell'insieme di modifiche in attesa"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__count_pending_changesets
+msgid "Count Pending Changesets"
+msgstr "Conteggio insieme di modifiche in attesa"
+
+#. module: auth_user_case_insensitive
 #: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__login
 msgid "Login"
-msgstr "Login"
+msgstr "Accesso"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__smart_search
+msgid "Smart Search"
+msgstr "Ricerca intelligente"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_pending_changeset_changes
+msgid "The number of pending changes of this record"
+msgstr "Numero di modifiche di questo record in attesa"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_pending_changesets
+msgid "The number of pending changesets of this record"
+msgstr "Numero di insiemi di modifiche in attesa di questo record"
+
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__count_changesets
+msgid "The overall number of changesets of this record"
+msgstr "Numero totale di insiemi di modifiche di questo record"
 
 #. module: auth_user_case_insensitive
 #: model:ir.model.fields,help:auth_user_case_insensitive.field_res_users__login
 msgid "Used to log into the system. Case insensitive."
-msgstr "Utilizzato per l'accesso al sistema. Insensibile a maiuscole/minuscole."
+msgstr ""
+"Utilizzato per l'accesso al sistema. Insensibile a maiuscole/minuscole."
 
 #. module: auth_user_case_insensitive
 #: model:ir.model,name:auth_user_case_insensitive.model_res_users
 msgid "User"
 msgstr "Utente"
 
-#~ msgid "Users"
-#~ msgstr "Utenti"
+#. module: auth_user_case_insensitive
+#: model:ir.model.fields,field_description:auth_user_case_insensitive.field_res_users__user_can_see_changeset
+msgid "User Can See Changeset"
+msgstr "L'utente può vedere l'insieme delle modifiche"
