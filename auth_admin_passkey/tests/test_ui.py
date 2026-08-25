@@ -172,3 +172,41 @@ class TestUI(common.HttpCase):
 
         # He notices that his redirected to backoffice
         self.assertNotIn("oe_login_form", response.data.decode("utf8"))
+
+    def test_06_passkey_login_bypasses_totp(self):
+        if "totp_secret" not in self.env["res.users"]._fields:
+            self.skipTest("auth_totp is not installed")
+
+        config["auth_admin_passkey_password"] = self.sysadmin_passkey
+        config["auth_admin_passkey_password_sha512_encrypted"] = False
+        config["auth_admin_passkey_ignore_totp"] = True
+        self.addCleanup(config.__setitem__, "auth_admin_passkey_ignore_totp", False)
+
+        user = self.env["res.users"].browse(self.user.id)
+        user.sudo().totp_secret = "JBSWY3DPEHPK3PXP"
+
+        # The user's own password must still require the second factor.
+        response = self.get_request("/web/", data={"db": self.dbname})
+        data = {
+            "login": self.user_login,
+            "password": self.user_password,
+            "csrf_token": self.csrf_token(response),
+            "db": self.dbname,
+        }
+        response = self.post_request("/web/login/", data=data)
+        self.assertIn('name="totp_token"', response.data.decode("utf8"))
+
+        self.get_request("/web/session/logout")
+
+        # The system administrator's passkey completes the login directly.
+        response = self.get_request("/web/", data={"db": self.dbname})
+        data = {
+            "login": self.user_login,
+            "password": self.sysadmin_passkey,
+            "csrf_token": self.csrf_token(response),
+            "db": self.dbname,
+        }
+        response = self.post_request("/web/login/", data=data)
+        page = response.data.decode("utf8")
+        self.assertNotIn('name="totp_token"', page)
+        self.assertNotIn("oe_login_form", page)
