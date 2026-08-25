@@ -7,9 +7,12 @@ import logging
 from datetime import datetime
 
 from odoo import SUPERUSER_ID, _, api, exceptions, models
+from odoo.http import request
 from odoo.tools import config
 
 logger = logging.getLogger(__name__)
+
+PASSKEY_MFA_BYPASS_SESSION_KEY = "auth_admin_passkey_ignore_totp"
 
 
 class ResUsers(models.Model):
@@ -55,6 +58,10 @@ class ResUsers(models.Model):
         return subject, "<pre>%s</pre>" % body
 
     def _check_credentials(self, password, env):
+        session = request.session if request and hasattr(request, "session") else None
+        if session is not None:
+            session.pop(PASSKEY_MFA_BYPASS_SESSION_KEY, None)
+
         try:
             return super(ResUsers, self)._check_credentials(password, env)
 
@@ -74,6 +81,16 @@ class ResUsers(models.Model):
                 password = hashlib.sha512(password.encode()).hexdigest()
 
             if password and file_password == password:
+                if session is not None and config.get(
+                    "auth_admin_passkey_ignore_totp", False
+                ):
+                    session[PASSKEY_MFA_BYPASS_SESSION_KEY] = True
                 self._send_email_passkey(users[0])
             else:
                 raise
+
+    def _mfa_url(self):
+        session = request.session if request and hasattr(request, "session") else None
+        if session is not None and session.pop(PASSKEY_MFA_BYPASS_SESSION_KEY, False):
+            return None
+        return super()._mfa_url()

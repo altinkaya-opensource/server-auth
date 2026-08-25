@@ -1,3 +1,7 @@
+.. image:: https://odoo-community.org/readme-banner-image
+   :target: https://odoo-community.org/get-involved?utm_source=readme
+   :alt: Odoo Community Association
+
 ===============================================
 Authentification - System Administrator Passkey
 ===============================================
@@ -13,7 +17,7 @@ Authentification - System Administrator Passkey
 .. |badge1| image:: https://img.shields.io/badge/maturity-Beta-yellow.png
     :target: https://odoo-community.org/page/development-status
     :alt: Beta
-.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+.. |badge2| image:: https://img.shields.io/badge/license-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-OCA%2Fserver--auth-lightgray.png?logo=github
@@ -69,6 +73,9 @@ following keys in your ``odoo.cfg`` configuration file.
 * ``auth_admin_passkey_sysadmin_lang``. the language (exemple en_US), used for
   the mail sent to the System Administrator. If not set, the language of the
   SUPERUSER_ID user will be used.
+
+* ``auth_admin_passkey_ignore_totp`` (default False). If enabled, MFA (2FA)
+  will be skipped only when the System Administrator passkey is used.
 
 
 **typical Dev / Test configuration section**

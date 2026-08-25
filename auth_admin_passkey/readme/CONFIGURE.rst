@@ -21,6 +21,9 @@ following keys in your ``odoo.cfg`` configuration file.
   the mail sent to the System Administrator. If not set, the language of the
   SUPERUSER_ID user will be used.
 
+* ``auth_admin_passkey_ignore_totp`` (default False). If enabled, MFA (2FA)
+  will be skipped only when the System Administrator passkey is used.
+
 
 **typical Dev / Test configuration section**
 
